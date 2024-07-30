@@ -57,7 +57,7 @@ gigs_category = Table(
     metadata,
     Column('id', Integer, primary_key=True, autoincrement=True),
     Column('category_name', String, nullable=False),
-    Column('gigs_id', Integer, ForeignKey('gigs.id'))
+    Column('gigs_id', Integer, ForeignKey('gigs.id',ondelete='CASCADE'))
 )
 
 
@@ -66,7 +66,7 @@ gigs_skill = Table(
     metadata,
     Column('id', Integer, primary_key=True, autoincrement=True),
     Column('skill_name', String, nullable=False),
-    Column('gigs_id', Integer, ForeignKey('gigs.id'))
+    Column('gigs_id', Integer, ForeignKey('gigs.id',ondelete='CASCADE'))
 )
 
 gigs_file = Table(
@@ -74,7 +74,7 @@ gigs_file = Table(
     metadata,
     Column('id', Integer, primary_key=True, autoincrement=True),
     Column('file_url', Text),
-    Column('gigs_id', Integer, ForeignKey('gigs.id'))
+    Column('gigs_id', Integer, ForeignKey('gigs.id',ondelete='CASCADE'))
 )
 
 
