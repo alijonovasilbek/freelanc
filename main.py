@@ -10,7 +10,7 @@ app = FastAPI(title='CogniJobs FREENLANCER', version='1.0.0')
 router = APIRouter()
 
 
-@router.get('/hello')
+@router.get('/')
 async def hello():
     return {'message': 'Hello, FastAPI!'}
 
@@ -18,3 +18,12 @@ app.include_router(router, prefix='/main')
 app.include_router(auth_router, prefix='/auth')
 app.include_router(router_client)
 app.include_router(router_public)
+
+
+
+
+
+
+
+
+
